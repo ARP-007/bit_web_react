@@ -1,5 +1,6 @@
 
 import { Users, Target, Award, Globe, CheckCircle } from 'lucide-react';
+import teamHero from '../assets/team-hero.jpg';
 
 const About = () => {
   const values = [
@@ -63,26 +64,28 @@ const About = () => {
               </p>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-3xl font-bold font-poppins text-primary mb-2">10+</div>
-                  <div className="text-gray-600">Years Experience</div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                  <div className="text-3xl font-bold font-poppins text-primary mb-2 group-hover:scale-110 transition-transform duration-300">10+</div>
+                  <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Years Experience</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 rounded-lg">
-                  <div className="text-3xl font-bold font-poppins text-primary mb-2">50+</div>
-                  <div className="text-gray-600">Expert Team</div>
+                <div className="text-center p-4 bg-gray-50 rounded-lg hover:scale-105 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                  <div className="text-3xl font-bold font-poppins text-primary mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+                  <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Expert Team</div>
                 </div>
               </div>
             </div>
             
             <div className="animate-slide-in-right">
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-primary to-accent rounded-2xl p-8 shadow-hero">
-                  <div className="h-full bg-white/10 rounded-xl backdrop-blur-sm flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <div className="text-6xl font-bold font-poppins mb-4">500+</div>
-                      <div className="text-xl">Happy Clients Worldwide</div>
-                    </div>
-                  </div>
+                <img 
+                  src={teamHero} 
+                  alt="Professional team working together" 
+                  className="w-full h-96 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent rounded-2xl"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <div className="text-4xl font-bold font-poppins mb-2">500+</div>
+                  <div className="text-lg">Happy Clients Worldwide</div>
                 </div>
                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
@@ -105,37 +108,46 @@ const About = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-in">
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="h-8 w-8 text-primary" />
+            <div className="group glassmorphism bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-card hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-fade-in relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                  <CheckCircle className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">IT Infrastructure</h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  From cloud migration to DevOps implementation, we build robust, scalable infrastructure 
+                  that supports your business growth and ensures maximum uptime.
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4">IT Infrastructure</h3>
-              <p className="text-gray-600 leading-relaxed">
-                From cloud migration to DevOps implementation, we build robust, scalable infrastructure 
-                that supports your business growth and ensures maximum uptime.
-              </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="h-8 w-8 text-accent" />
+            <div className="group glassmorphism bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-card hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-fade-in relative overflow-hidden" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                  <CheckCircle className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4 group-hover:text-accent transition-colors duration-300">AI & Automation</h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  Harness the power of artificial intelligence to automate processes, gain insights, 
+                  and create intelligent solutions that transform how your business operates.
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4">AI & Automation</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Harness the power of artificial intelligence to automate processes, gain insights, 
-                and create intelligent solutions that transform how your business operates.
-              </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="h-8 w-8 text-primary" />
+            <div className="group glassmorphism bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-card hover:shadow-2xl hover:scale-105 transition-all duration-500 animate-fade-in relative overflow-hidden" style={{ animationDelay: '0.4s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                  <CheckCircle className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4 group-hover:text-primary transition-colors duration-300">Data Analytics</h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  Turn your data into your competitive advantage with custom analytics solutions, 
+                  dashboards, and business intelligence that drive informed decision-making.
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold font-poppins text-gray-900 mb-4">Data Analytics</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Turn your data into your competitive advantage with custom analytics solutions, 
-                dashboards, and business intelligence that drive informed decision-making.
-              </p>
             </div>
           </div>
         </div>
@@ -167,14 +179,14 @@ const About = () => {
             {values.map((value, index) => (
               <div 
                 key={index} 
-                className="text-center p-6 rounded-lg hover:bg-gray-50 transition-colors animate-fade-in" 
+                className="group text-center p-6 rounded-lg glassmorphism bg-white/50 backdrop-blur-sm hover:bg-white/80 hover:scale-105 hover:shadow-lg transition-all duration-500 animate-fade-in cursor-pointer" 
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-xl">
+                  <value.icon className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <h3 className="text-xl font-semibold font-poppins text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold font-poppins text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{value.description}</p>
               </div>
             ))}
           </div>
