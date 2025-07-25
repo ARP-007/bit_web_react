@@ -90,17 +90,17 @@ const Services = () => {
     services: any[];
     delay?: number;
   }) => (
-    <section className="py-16">
-      <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
-        <h2 className="text-3xl lg:text-4xl font-bold font-poppins text-gray-900 mb-4">
+    <section className="py-20">
+      <div className="text-center mb-16 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+        <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
           {title}
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           {description}
         </p>
       </div>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {services.map((service, index) => (
           <div 
             key={index} 
@@ -131,43 +131,82 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Tech Hero Image Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
+                Transforming Business Through
+                <span className="text-gradient block">Advanced Technology</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                Our expert team leverages cutting-edge technologies to deliver solutions that drive 
+                innovation, efficiency, and growth across your entire organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-primary text-white rounded-lg font-semibold text-lg hover:bg-primary/90 transition-all hover:scale-105 hover:shadow-lg text-center"
+                >
+                  Start Your Project
+                </a>
+                <a
+                  href="mailto:hello@techforward.com"
+                  className="px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-all hover:scale-105 text-center"
+                >
+                  Schedule Consultation
+                </a>
+              </div>
+            </div>
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                  alt="Team collaborating on technology solutions" 
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+              </div>
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* IT Services */}
         <ServiceSection
           title="IT Services"
-          description="Complete infrastructure solutions from setup to maintenance. We ensure your technology foundation is robust, secure, and scalable."
+          description="Complete infrastructure solutions from setup to maintenance. We ensure your technology foundation is robust, secure, and scalable for the future."
           services={itServices}
           delay={0}
         />
 
-        {/* Divider */}
-        <div className="border-t border-gray-200 my-16"></div>
-
         {/* AI Services */}
         <ServiceSection
           title="AI Services"
-          description="Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent solutions for your business."
+          description="Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent solutions that drive business value."
           services={aiServices}
           delay={0.2}
         />
 
-        {/* Divider */}
-        <div className="border-t border-gray-200 my-16"></div>
-
         {/* Data Services */}
         <ServiceSection
           title="Data Services"
-          description="Transform raw data into actionable insights. From engineering to visualization, we help you make data-driven decisions."
+          description="Transform raw data into actionable insights with comprehensive analytics, engineering, and visualization solutions."
           services={dataServices}
           delay={0.4}
         />
       </div>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50 mt-16">
+      <section className="py-20 bg-gray-50 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl font-bold font-poppins text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
               Ready to Get <span className="text-gradient">Started?</span>
             </h2>
             <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
