@@ -13,7 +13,7 @@ const Footer = () => {
               <div className="p-2 bg-white/10 rounded-lg">
                 <Code2 className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold font-poppins">TechForward</span>
+              <span className="text-xl font-bold font-poppins">bitNbytesol</span>
             </Link>
             <p className="text-white/80 mb-4 max-w-md">
               Building future-ready technology solutions for modern businesses. 
@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-white/80">
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">hello@techforward.com</span>
+                <span className="text-sm">hello@bitnbytesol.com</span>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-1 text-accent" />
-                <span className="text-white/80 text-sm">hello@techforward.com</span>
+                <span className="text-white/80 text-sm">hello@bitnbytesol.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-1 text-accent" />
@@ -92,7 +92,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-white/60 text-sm">
-            © 2024 TechForward Solutions. All rights reserved. Built for the future.
+            © 2024 bitNbytesol. All rights reserved. Built for the future.
           </p>
         </div>
       </div>

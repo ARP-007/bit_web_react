@@ -33,7 +33,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-bold font-poppins mb-6">
-              About <span className="text-accent">TechForward</span>
+              About <span className="text-accent">bitNbytesol</span>
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               We're not just another tech company. We're innovation catalysts, digital architects, 
@@ -52,8 +52,8 @@ const About = () => {
                 Who <span className="text-gradient">We Are</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded in 2015, TechForward Solutions has grown from a small team of passionate 
-                technologists into a trusted partner for businesses across industries. Our journey 
+                Founded in 2015, bitNbytesol has grown from a small team of passionate 
+                technologists into a trusted partner for businesses across industries. Our journey
                 began with a simple mission: to bridge the gap between complex technology and 
                 real business value.
               </p>

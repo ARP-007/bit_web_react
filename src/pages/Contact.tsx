@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'hello@techforward.com',
+      details: 'hello@bitnbytesol.com',
       description: 'We respond within 24 hours'
     },
     {
@@ -234,7 +234,7 @@ const Contact = () => {
               <div className="text-center p-8">
                 <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
                 <h3 className="text-2xl font-bold font-poppins text-gray-900 mb-2">
-                  TechForward Solutions
+                  bitNbytesol
                 </h3>
                 <p className="text-gray-600 mb-4">
                   123 Tech Street, Innovation District<br />

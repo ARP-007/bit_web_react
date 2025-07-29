@@ -26,7 +26,7 @@ const Navigation = () => {
               <Code2 className="h-6 w-6 text-white" />
             </div>
             <span className="text-xl font-bold text-primary font-poppins">
-              TechForward
+              bitNbytesol
             </span>
           </Link>
 

@@ -152,7 +152,7 @@ const Services = () => {
                   Start Your Project
                 </a>
                 <a
-                  href="mailto:hello@techforward.com"
+                  href="mailto:hello@bitnbytesol.com"
                   className="px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-all hover:scale-105 text-center"
                 >
                   Schedule Consultation
@@ -220,7 +220,7 @@ const Services = () => {
                 Start Your Project
               </a>
               <a
-                href="mailto:hello@techforward.com"
+                href="mailto:hello@bitnbytesol.com"
                 className="px-8 py-4 border-2 border-primary text-primary rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-all hover:scale-105"
               >
                 Schedule Consultation
