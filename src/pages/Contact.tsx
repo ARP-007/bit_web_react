@@ -218,7 +218,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl font-bold font-poppins text-gray-900 mb-4">
@@ -247,7 +247,33 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12 animate-fade-in">
+      <h2 className="text-3xl font-bold font-poppins text-gray-900 mb-4">
+        Visit Our <span className="text-gradient">Office</span>
+      </h2>
+      <p className="text-lg text-gray-600">
+        Located in the heart of San Francisco's Innovation District
+      </p>
+    </div>
+
+    <div className="rounded-2xl overflow-hidden shadow-card animate-fade-in">
+      <iframe
+        title="bitNbytesol Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086535652729!2d-122.4010125846821!3d37.78583497975756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5c94f7c1%3A0x1234567890abcdef!2s123+Tech+Street%2C+San+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1691234567890!5m2!1sen!2sus"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
     </div>
   );
 };
