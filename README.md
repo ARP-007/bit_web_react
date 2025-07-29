@@ -1,6 +1,6 @@
 # bitNbytesol - Future-Ready Technology Solutions
 
-![bitNbytesol Logo](src/bitnbytesol-logo.png)
+![bitNbytesol Logo](src/assets/bitnbytesol-logo.png)
 
 Welcome to the official repository for the **bitNbytesol** company website—a modern, responsive React application designed to showcase our digital solutions, services, and expertise. This site is built for performance, easy customization, and a world-class client experience.
 
