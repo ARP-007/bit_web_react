@@ -4,6 +4,9 @@ import { ArrowRight, Server, Brain, Database, CheckCircle, Users, Award, Clock }
 import ServiceCard from '@/components/ServiceCard';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import teamCollaboration from '@/assets/team-collaboration.jpg';
+import codingWorkspace from '@/assets/coding-workspace.jpg';
+import circuitBoard from '@/assets/circuit-board.jpg';
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,7 +54,11 @@ const Index = () => {
         style={{ 
           y: heroY,
           rotateX: heroRotate,
-          scale: heroScale
+          scale: heroScale,
+          backgroundImage: `linear-gradient(rgba(30, 42, 74, 0.8), rgba(30, 42, 74, 0.8)), url(${codingWorkspace})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
         <div className="absolute inset-0 bg-black/10"></div>
@@ -133,13 +140,23 @@ const Index = () => {
 
       {/* Company Introduction with 3D Effects */}
       <motion.section 
-        className="py-20 bg-gray-50"
+        className="py-20 bg-gray-50 relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Background image with overlay */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{ 
+            backgroundImage: `url(${teamCollaboration})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gray-50/90"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
@@ -203,13 +220,22 @@ const Index = () => {
 
       {/* Services Overview with 3D Card Effects */}
       <motion.section 
-        className="py-20 bg-white"
+        className="py-20 bg-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Subtle background pattern */}
+        <div 
+          className="absolute top-0 right-0 w-1/3 h-full opacity-5"
+          style={{ 
+            backgroundImage: `url(${circuitBoard})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}

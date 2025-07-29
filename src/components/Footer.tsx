@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
-import { Code2, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import logo from '@/assets/bitnbytesol-logo.png';
 
 const Footer = () => {
   return (
@@ -9,10 +10,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="p-2 bg-white/10 rounded-lg">
-                <Code2 className="h-6 w-6 text-white" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3 mb-4">
+              <img src={logo} alt="bitNbytesol" className="h-8 w-8" />
               <span className="text-xl font-bold font-poppins">bitNbytesol</span>
             </Link>
             <p className="text-white/80 mb-4 max-w-md">

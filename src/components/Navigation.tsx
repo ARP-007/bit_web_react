@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '@/assets/bitnbytesol-logo.png';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,10 +22,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-primary rounded-lg group-hover:bg-primary/90 transition-colors">
-              <Code2 className="h-6 w-6 text-white" />
-            </div>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <img src={logo} alt="bitNbytesol" className="h-10 w-10 group-hover:scale-105 transition-transform" />
             <span className="text-xl font-bold text-primary font-poppins">
               bitNbytesol
             </span>
