@@ -169,7 +169,7 @@ const OurClients = () => {
                       <img
                         src={client.logo}
                         alt={`${client.name} logo - Trusted client of bitNbytesol`}
-                        className="max-w-20 max-h-16 object-contain transition-all duration-300"
+                        className="max-w-32 max-h-24 object-contain transition-all duration-300"
                       />
                       
                       {/* Industry label - shows on hover */}
