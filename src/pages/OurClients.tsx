@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Sparkles, Users, TrendingUp, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import client logos
 import googleLogo from "@/assets/logos/google-logo.png";
@@ -81,202 +84,163 @@ const floatingAnimation = {
 };
 
 const OurClients = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 relative overflow-hidden">
-      {/* Enhanced Animated Background */}
+    <div className="min-h-screen bg-gray-50 relative overflow-hidden">
+      {/* Background Animated Elements - matching Index.tsx */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Geometric Shapes */}
-        <motion.div
-          animate={floatingAnimation}
-          className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"
-        />
-        <motion.div
-          animate={{
-            ...floatingAnimation,
-            transition: { ...floatingAnimation.transition, delay: 2 }
+        <motion.div 
+          className="absolute top-20 right-20 w-32 h-32 bg-white/5 rounded-full blur-3xl"
+          animate={{ 
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.2, 1]
           }}
-          className="absolute top-40 right-20 w-24 h-24 bg-secondary/15 rounded-full blur-2xl"
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div
-          animate={{
-            ...floatingAnimation,
-            transition: { ...floatingAnimation.transition, delay: 4 }
+        <motion.div 
+          className="absolute bottom-20 left-20 w-40 h-40 bg-accent/20 rounded-full blur-3xl"
+          animate={{ 
+            x: [0, -25, 0],
+            y: [0, 15, 0],
+            scale: [1, 0.8, 1]
           }}
-          className="absolute bottom-40 left-1/4 w-40 h-40 bg-accent/10 rounded-full blur-3xl"
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
-        
-        {/* Gradient Mesh */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <motion.div 
+          className="absolute top-1/3 left-1/4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
       <div className="relative z-10">
-        {/* Enhanced Hero Section */}
+        {/* Hero Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
+            <div data-aos="fade-up" className="space-y-6">
               <div className="flex justify-center mb-6">
-                <div className="p-3 bg-primary/10 rounded-2xl backdrop-blur-sm border border-primary/20">
+                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg">
                   <Users className="w-8 h-8 text-primary" />
                 </div>
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-                <span className="bg-gradient-to-r from-primary via-primary/90 to-secondary bg-clip-text text-transparent">
-                  Our Trusted Clients
-                </span>
+              <h1 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
+                Our Trusted <span className="text-gradient">Clients</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 We're proud to have partnered with these amazing companies to deliver innovative digital solutions that drive real business transformation.
               </p>
               
-              <div className="flex justify-center items-center gap-2 text-sm text-muted-foreground">
-                <Sparkles className="w-4 h-4 text-primary" />
+              <div className="flex justify-center items-center gap-2 text-sm text-gray-500 mt-6">
+                <Sparkles className="w-4 h-4 text-accent" />
                 <span>Trusted by industry leaders worldwide</span>
-                <Sparkles className="w-4 h-4 text-primary" />
+                <Sparkles className="w-4 h-4 text-accent" />
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Enhanced Client Logos Grid */}
+        {/* Client Logos Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {clients.map((client, index) => (
-                <motion.div
+                <div
                   key={client.name}
-                  variants={itemVariants}
-                  whileHover={{ 
-                    scale: 1.05,
-                    transition: { duration: 0.3, ease: "easeOut" }
-                  }}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                   className="group relative"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-8 h-48 flex flex-col items-center justify-center transition-all duration-500 hover:bg-white/20 hover:border-white/30 hover:shadow-2xl hover:shadow-primary/10">
-                    {/* Subtle gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
+                  <div className="relative overflow-hidden rounded-xl bg-white backdrop-blur-md border border-gray-200 p-8 h-48 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-105">
                     {/* Logo */}
                     <div className="relative z-10 flex flex-col items-center space-y-4">
                       <img
                         src={client.logo}
                         alt={`${client.name} logo - Trusted client of bitNbytesol`}
-                        className="max-w-20 max-h-16 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                        className="max-w-20 max-h-16 object-contain transition-all duration-300"
                       />
                       
-                      {/* Industry label */}
+                      {/* Industry label - shows on hover */}
                       <div className="text-center">
-                        <p className="text-sm font-medium text-foreground/80 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <p className="text-sm font-medium text-gray-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
                           {client.industry}
                         </p>
                       </div>
                     </div>
                     
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                    {/* Turquoise underline effect on hover */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Enhanced Statistics Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Statistics Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                Proven Track Record
+            <div data-aos="fade-up" className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
+                Proven Track <span className="text-gradient">Record</span>
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our numbers speak for themselves – delivering excellence across every project
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
-            >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <motion.div
+                <div
                   key={index}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                  className="relative group"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                  className="text-center group"
                 >
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-xl">
-                    <div className={`inline-flex p-3 rounded-xl bg-white/10 mb-4 ${stat.color}`}>
-                      <stat.icon className="w-6 h-6" />
-                    </div>
-                    <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-muted-foreground font-medium">
-                      {stat.label}
-                    </div>
+                  <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="h-8 w-8 text-primary" />
                   </div>
-                </motion.div>
+                  <div className="text-3xl font-bold font-poppins text-gray-900 mb-2">{stat.number}</div>
+                  <div className="text-gray-600">{stat.label}</div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Enhanced Testimonials Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Testimonials Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                What Our Clients Say
+            <div data-aos="fade-up" className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-6">
+                What Our Clients <span className="text-gradient">Say</span>
               </h2>
-              <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Real feedback from real clients who've experienced transformation
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid md:grid-cols-3 gap-8"
-            >
+            <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <motion.div
+                <div
                   key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                   className="relative group"
                 >
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-8 h-full transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-xl">
+                  <div className="gradient-card rounded-xl p-6 md:p-8 h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                     {/* Rating stars */}
                     <div className="flex mb-6">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -285,68 +249,68 @@ const OurClients = () => {
                     </div>
                     
                     {/* Quote */}
-                    <p className="text-muted-foreground mb-6 italic leading-relaxed">
+                    <p className="text-gray-600 mb-6 italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                     
                     {/* Author info */}
-                    <div className="border-t border-white/20 pt-6">
-                      <p className="font-semibold text-foreground">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                    <div className="border-t border-gray-200 pt-6">
+                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <p className="text-sm text-gray-600">{testimonial.position}</p>
                       <p className="text-xs text-primary mt-1">{testimonial.company}</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Enhanced CTA Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-                {/* Background decoration */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-50" />
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl" />
-                
-                <div className="relative z-10">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                    Want to Join Our Client List?
-                  </h2>
-                  <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-                    Let's discuss how we can transform your business with cutting-edge technology solutions that deliver real results.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" asChild className="group bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                      <Link to="/contact">
-                        Let's Talk
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="lg" asChild className="px-8 py-4 text-lg font-semibold rounded-xl border-2 hover:bg-white/10">
-                      <Link to="/services">
-                        View Our Services
-                      </Link>
-                    </Button>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground mt-6">
-                    Free consultation • No commitment required • Response within 24 hours
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+        {/* CTA Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 gradient-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative max-w-7xl mx-auto text-center">
+            <div data-aos="fade-up">
+              <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-6" style={{ color: '#16325C' }}>
+                Want to Join Our Client List?
+              </h2>
+              <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+                Let's discuss how we can transform your business with cutting-edge technology solutions that deliver real results.
+              </p>
+              
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
+                style={{ backgroundColor: '#00C6AE', color: 'white' }}
+              >
+                Let's Talk
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              
+              <p className="text-sm text-white/80 mt-6">
+                Free consultation • No commitment required • Response within 24 hours
+              </p>
+            </div>
           </div>
+          
+          <motion.div 
+            className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 1.3, 1],
+              x: [0, 20, 0],
+              y: [0, -10, 0]
+            }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div 
+            className="absolute bottom-10 left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 0.8, 1],
+              x: [0, -15, 0],
+              y: [0, 12, 0]
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          />
         </section>
       </div>
     </div>
