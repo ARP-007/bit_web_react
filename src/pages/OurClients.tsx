@@ -7,47 +7,47 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 // Import client logos
-import googleLogo from "@/assets/logos/google-logo.png";
-import amazonLogo from "@/assets/logos/amazon-logo.png";
-import microsoftLogo from "@/assets/logos/microsoft-logo.png";
-import metaLogo from "@/assets/logos/meta-logo.png";
-import ibmLogo from "@/assets/logos/ibm-logo.png";
-import appleLogo from "@/assets/logos/apple-logo.png";
-import teslaLogo from "@/assets/logos/tesla-logo.png";
-import netflixLogo from "@/assets/logos/netflix-logo.png";
+import medpointLogo from "@/assets/logos/medpoint-logo.png";
+import summitLegalLogo from "@/assets/logos/summit-legal-logo.png";
+import pacificManufacturingLogo from "@/assets/logos/pacific-manufacturing-logo.png";
+import riversideCreditLogo from "@/assets/logos/riverside-credit-logo.png";
+import techflowLogo from "@/assets/logos/techflow-logo.png";
+import greenviewConstructionLogo from "@/assets/logos/greenview-construction-logo.png";
+import metroAutoLogo from "@/assets/logos/metro-auto-logo.png";
+import coastalInsuranceLogo from "@/assets/logos/coastal-insurance-logo.png";
 
 const clients = [
-  { name: "Google", logo: googleLogo, industry: "Search & Cloud Technology" },
-  { name: "Amazon", logo: amazonLogo, industry: "E-commerce & AWS" },
-  { name: "Microsoft", logo: microsoftLogo, industry: "Enterprise Software" },
-  { name: "Meta", logo: metaLogo, industry: "Social Media & VR/AR" },
-  { name: "IBM", logo: ibmLogo, industry: "Enterprise AI Solutions" },
-  { name: "Apple", logo: appleLogo, industry: "Consumer Technology" },
-  { name: "Tesla", logo: teslaLogo, industry: "Electric Vehicles & Energy" },
-  { name: "Netflix", logo: netflixLogo, industry: "Streaming & Entertainment" },
+  { name: "MedPoint Healthcare", logo: medpointLogo, industry: "Healthcare Services" },
+  { name: "Summit Legal Group", logo: summitLegalLogo, industry: "Legal Services" },
+  { name: "Pacific Manufacturing", logo: pacificManufacturingLogo, industry: "Industrial Manufacturing" },
+  { name: "Riverside Credit Union", logo: riversideCreditLogo, industry: "Financial Services" },
+  { name: "TechFlow Solutions", logo: techflowLogo, industry: "IT Consulting" },
+  { name: "GreenView Construction", logo: greenviewConstructionLogo, industry: "Construction & Real Estate" },
+  { name: "Metro Auto Group", logo: metroAutoLogo, industry: "Automotive Sales" },
+  { name: "Coastal Insurance", logo: coastalInsuranceLogo, industry: "Insurance Services" },
 ];
 
 const testimonials = [
   {
-    quote: "bitNbytesol transformed our entire digital infrastructure with cutting-edge AI solutions that exceeded every expectation. Their expertise is unmatched.",
-    author: "Sarah Chen",
-    position: "CTO, TechFlow Inc.",
+    quote: "bitNbytesol transformed our patient management system and implemented a seamless EMR solution. Our workflow efficiency improved dramatically.",
+    author: "Dr. Sarah Chen",
+    position: "Medical Director",
     rating: 5,
-    company: "TechFlow"
+    company: "MedPoint Healthcare"
   },
   {
-    quote: "The cloud migration and data analytics implementation helped us scale efficiently while reducing operational costs by 45%. Outstanding results.",
+    quote: "Their legal case management software and cloud migration helped us serve clients better while reducing operational overhead by 40%.",
     author: "Michael Rodriguez",
-    position: "VP Engineering, DataCore",
+    position: "Managing Partner",
     rating: 5,
-    company: "DataCore"
+    company: "Summit Legal Group"
   },
   {
-    quote: "Their AI-powered customer service solution revolutionized our operations. Response times improved by 80% and customer satisfaction soared.",
+    quote: "The inventory management system and production analytics dashboard revolutionized our manufacturing processes. Highly recommended.",
     author: "Emily Johnson",
-    position: "Operations Director, ServiceHub",
+    position: "Operations Manager",
     rating: 5,
-    company: "ServiceHub"
+    company: "Pacific Manufacturing"
   }
 ];
 
