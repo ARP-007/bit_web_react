@@ -83,6 +83,29 @@ const floatingAnimation = {
   }
 };
 
+const logoVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 15
+    }
+  },
+  hover: {
+    scale: 1.1,
+    y: -10,
+    transition: {
+      type: "spring" as const,
+      stiffness: 300,
+      damping: 20
+    }
+  }
+};
+
 const OurClients = () => {
   useEffect(() => {
     AOS.init({
@@ -155,37 +178,87 @@ const OurClients = () => {
         {/* Client Logos Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
               {clients.map((client, index) => (
-                <div
+                <motion.div
                   key={client.name}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
+                  variants={logoVariants}
+                  whileHover="hover"
                   className="group relative"
                 >
-                  <div className="relative overflow-hidden rounded-xl bg-white backdrop-blur-md border border-gray-200 p-8 h-48 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:scale-105">
+                  <motion.div 
+                    className="relative overflow-hidden rounded-xl bg-white backdrop-blur-md border border-gray-200 p-8 h-56 flex flex-col items-center justify-center shadow-sm"
+                    whileHover={{ 
+                      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+                      y: -5
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
                     {/* Logo */}
                     <div className="relative z-10 flex flex-col items-center space-y-4">
-                      <img
+                      <motion.img
                         src={client.logo}
                         alt={`${client.name} logo - Trusted client of bitNbytesol`}
-                        className="max-w-32 max-h-24 object-contain transition-all duration-300"
+                        className="max-w-40 max-h-32 object-contain"
+                        animate={{ 
+                          scale: [1, 1.05, 1],
+                          transition: {
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }
+                        }}
+                        whileHover={{ 
+                          scale: 1.1,
+                          rotate: [0, 2, -2, 0],
+                          transition: { 
+                            rotate: { duration: 0.5 },
+                            scale: { type: "spring" as const, stiffness: 300 }
+                          }
+                        }}
                       />
                       
-                      {/* Industry label - shows on hover */}
+                      {/* Industry label - always visible now */}
                       <div className="text-center">
-                        <p className="text-sm font-medium text-gray-600 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <motion.p 
+                          className="text-sm font-medium text-gray-600"
+                          initial={{ opacity: 0.7 }}
+                          whileHover={{ 
+                            opacity: 1,
+                            scale: 1.05,
+                            color: "hsl(var(--primary))"
+                          }}
+                          transition={{ duration: 0.3 }}
+                        >
                           {client.industry}
-                        </p>
+                        </motion.p>
                       </div>
                     </div>
                     
-                    {/* Turquoise underline effect on hover */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  </div>
-                </div>
+                    {/* Enhanced gradient underline effect */}
+                    <motion.div 
+                      className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary origin-left"
+                      initial={{ scaleX: 0 }}
+                      whileHover={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                    />
+                    
+                    {/* Subtle glow effect on hover */}
+                    <motion.div
+                      className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-accent/5 opacity-0"
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
